@@ -29,7 +29,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View
-      className="bg-black"
       style={{
         flex: 1,
         // Paddings to handle safe area
@@ -37,6 +36,7 @@ const HomeScreen = ({ navigation }) => {
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
+        backgroundColor: "black",
       }}
     >
       <StatusBar />

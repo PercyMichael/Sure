@@ -7,8 +7,7 @@ const width = Dimensions.get("screen").width / 2 - 20;
 
 const Product = ({ onPress, price, image, name }) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
+    <View
       style={{
         borderColor: "red",
         width: width,
@@ -18,10 +17,12 @@ const Product = ({ onPress, price, image, name }) => {
         borderColor: "#222",
       }}
     >
-      <Image
-        source={image}
-        style={{ width: "100%", height: 150, marginVertical: 16 }}
-      />
+      <TouchableOpacity onPress={onPress}>
+        <Image
+          source={image}
+          style={{ width: "100%", height: 150, marginVertical: 16 }}
+        />
+      </TouchableOpacity>
       <View id="details" style={{ padding: 12 }}>
         <Text className="text-white text-xs capitalize">
           {/* {name.length > 23
@@ -37,7 +38,9 @@ const Product = ({ onPress, price, image, name }) => {
         </Text>
 
         <View>
-          <View className="flex-row justify-between py-1 items-center">
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
             <AntDesign name="star" size={15} color="white" />
             <View className="rounded-full ">
               <MaterialCommunityIcons
@@ -49,7 +52,7 @@ const Product = ({ onPress, price, image, name }) => {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
